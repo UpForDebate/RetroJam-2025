@@ -38,7 +38,8 @@ class_name Player extends CharacterBody3D
 @onready var camera : Camera3D = $Head/Camera3D
 @onready var ltilt : Marker3D = $Tilt/LTilt
 @onready var rtilt : Marker3D = $Tilt/RTilt
-
+@onready var runaudioplayer : AudioStreamPlayer = $RunAudio
+@onready var walkaudioplayer : AudioStreamPlayer = $WalkAudio
 
 # Vectors
 var direction : Vector3 = Vector3.ZERO
@@ -82,6 +83,8 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Dialogic.current_timeline:
+		runaudioplayer.stop()
+		walkaudioplayer.stop()
 		return
 	# Add the gravity.
 	if not is_on_floor():
@@ -96,6 +99,9 @@ func _physics_process(delta: float) -> void:
 	direction = lerp(direction,(transform.basis * Vector3(input_dir.x,0,input_dir.y)).normalized(), delta * 7.0)
 	_speed = lerp(_speed, Move_Speed, min(delta * 5.0, 1.0))
 	Sprint()
+	if input_dir.is_zero_approx():
+		runaudioplayer.stop()
+		walkaudioplayer.stop()
 	if direction:
 		velocity.x = direction.x * _speed
 		velocity.z = direction.z * _speed
@@ -107,8 +113,16 @@ func _physics_process(delta: float) -> void:
 
 func Sprint() -> void:
 	if Input.is_action_pressed(InputDictionary["Sprint"]):
+		if walkaudioplayer.playing:
+			walkaudioplayer.stop()
+		if not runaudioplayer.playing:
+			runaudioplayer.play()
 		_speed = lerp(_speed, Sprint_Speed, 0.1)
 	else:
+		if runaudioplayer.playing:
+			runaudioplayer.stop()
+		if not walkaudioplayer.playing:
+			walkaudioplayer.play()
 		_speed = lerp(_speed, Move_Speed, 0.1)
 
 func camera_tilt(delta: float) -> void:
