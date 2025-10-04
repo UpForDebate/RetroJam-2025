@@ -95,6 +95,17 @@ func _physics_process(delta: float) -> void:
 	if input_dir.is_zero_approx():
 		runaudioplayer.stop()
 		walkaudioplayer.stop()
+	else:
+		if Input.is_action_pressed(InputDictionary["Sprint"]):
+			if walkaudioplayer.playing:
+				walkaudioplayer.stop()
+			if not runaudioplayer.playing:
+				runaudioplayer.play()
+		else:
+			if runaudioplayer.playing:
+				runaudioplayer.stop()
+			if not walkaudioplayer.playing:
+				walkaudioplayer.play()
 	if direction:
 		velocity.x = direction.x * _speed
 		velocity.z = direction.z * _speed
@@ -116,16 +127,8 @@ func _physics_process(delta: float) -> void:
 
 func Sprint() -> void:
 	if Input.is_action_pressed(InputDictionary["Sprint"]):
-		if walkaudioplayer.playing:
-			walkaudioplayer.stop()
-		if not runaudioplayer.playing:
-			runaudioplayer.play()
 		_speed = lerp(_speed, Sprint_Speed, 0.1)
 	else:
-		if runaudioplayer.playing:
-			runaudioplayer.stop()
-		if not walkaudioplayer.playing:
-			walkaudioplayer.play()
 		_speed = lerp(_speed, Move_Speed, 0.1)
 
 func camera_tilt(delta: float) -> void:
