@@ -12,7 +12,7 @@ func _input(event):
 	elif event is InputEventJoypadButton or (event is InputEventJoypadMotion && deadzone_check()):
 		is_mouse = false
 	
-	if is_mouse:
+	if not is_mouse:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
