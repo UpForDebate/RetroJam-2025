@@ -61,6 +61,8 @@ func _input(event: InputEvent) -> void:
 		Camera_Inp = event.relative
 
 func _process(delta: float) -> void:
+	if Dialogic.current_timeline:
+		return
 	# Camera Lock
 	if Input.is_action_just_pressed(InputDictionary["Escape"]) and _isMouseCaptured:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -79,6 +81,8 @@ func _process(delta: float) -> void:
 	camera_tilt(delta)
 
 func _physics_process(delta: float) -> void:
+	if Dialogic.current_timeline:
+		return
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
