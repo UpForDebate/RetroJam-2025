@@ -2,6 +2,7 @@ class_name InputChecker
 extends Node
 
 static var is_mouse = true
+static var is_game = false
 
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -12,7 +13,7 @@ func _input(event):
 	elif event is InputEventJoypadButton or (event is InputEventJoypadMotion && deadzone_check()):
 		is_mouse = false
 	
-	if not is_mouse:
+	if is_mouse && not is_game:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	elif Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

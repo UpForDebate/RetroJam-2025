@@ -11,15 +11,16 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_0ewp1")
 InputDictionary = {
-"Backward": "Backward",
-"Escape": "Escape",
-"Forward": "Forward",
-"Interact": "interact",
-"Jump": "Jump",
-"Left": "Left",
-"Right": "Right",
-"Sprint": "Sprint"
+"Backward": "game_backward",
+"Escape": "game_escape",
+"Forward": "game_forward",
+"Interact": "game_interact",
+"Jump": "game_jump",
+"Left": "game_left",
+"Right": "game_right",
+"Sprint": "game_sprint"
 }
+TiltThreshhold = 0.05
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_g5alh")
