@@ -12,7 +12,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_0ewp1")
 InputDictionary = {
 "Backward": "game_backward",
-"Escape": "game_escape",
+"Escape": "game_menu",
 "Forward": "game_forward",
 "Interact": "game_interact",
 "Jump": "game_jump",

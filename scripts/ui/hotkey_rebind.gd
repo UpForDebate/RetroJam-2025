@@ -27,7 +27,7 @@ func load_keybinds() -> void:
 func set_action_name():
 	label.text = "Unassigned"
 	
-	var converted_text = action_name.lstrip("game_")
+	var converted_text = action_name.trim_prefix("game_")
 	
 	for i in range(converted_text.length()):
 		if converted_text[i] == '_':
