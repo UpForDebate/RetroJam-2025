@@ -3,11 +3,9 @@
 [ext_resource type="Theme" uid="uid://12luaxvvh3tt" path="res://resources/theme_main.tres" id="1_7i2ea"]
 [ext_resource type="Script" uid="uid://n3rmwtdtremj" path="res://scripts/systems/main_menu.gd" id="1_kov03"]
 [ext_resource type="Texture2D" uid="uid://c61f01bmjdsu1" path="res://resources/sprites/UpForDebateLogo.png" id="3_ckgf1"]
+[ext_resource type="Texture2D" uid="uid://bn28xhlgupmdj" path="res://resources/game_logo.png" id="3_lmihv"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lmihv"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ny5bo"]
-size = Vector2(3, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3xp8y"]
 region = Rect2(0, 128, 128, 128)
@@ -67,7 +65,7 @@ alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/LSide"]
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_ny5bo")
+texture = ExtResource("3_lmihv")
 expand_mode = 5
 
 [node name="GameOptions" type="VBoxContainer" parent="MarginContainer/HBoxContainer/LSide"]
