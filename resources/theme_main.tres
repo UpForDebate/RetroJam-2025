@@ -1,6 +1,24 @@
-[gd_resource type="Theme" format=3 uid="uid://12luaxvvh3tt"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://12luaxvvh3tt"]
+
+[ext_resource type="FontFile" uid="uid://6hflm8vkdjoo" path="res://addons/godot4.3_fps_character_controller/Player/Fonts/AmaticSC-Bold.ttf" id="1_gxrpd"]
+[ext_resource type="FontFile" uid="uid://h6o7nvdiwmhl" path="res://addons/godot4.3_fps_character_controller/Player/Fonts/AmaticSC-Regular.ttf" id="2_ymdhe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ymdhe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_413rh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_blend = true
 
 [resource]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_gxrpd")
+Button/styles/disabled = SubResource("StyleBoxEmpty_ymdhe")
+Button/styles/focus = SubResource("StyleBoxFlat_413rh")
+Label/fonts/font = ExtResource("2_ymdhe")
 MarginContainer/constants/margin_bottom = 60
 MarginContainer/constants/margin_left = 40
 MarginContainer/constants/margin_right = 60

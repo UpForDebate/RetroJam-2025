@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cedf8dexfe75p"]
+[gd_scene load_steps=12 format=3 uid="uid://cedf8dexfe75p"]
 
 [ext_resource type="Theme" uid="uid://12luaxvvh3tt" path="res://resources/theme_main.tres" id="1_7i2ea"]
 [ext_resource type="Script" uid="uid://n3rmwtdtremj" path="res://scripts/systems/main_menu.gd" id="1_kov03"]
+[ext_resource type="Texture2D" uid="uid://c61f01bmjdsu1" path="res://resources/sprites/UpForDebateLogo.png" id="3_ckgf1"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ny5bo"]
 size = Vector2(3, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lmihv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3xp8y"]
 region = Rect2(0, 128, 128, 128)
@@ -100,11 +103,16 @@ focus_previous = NodePath("../ContinueButton")
 text = "Quit
 "
 
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+theme_override_styles/separator = SubResource("StyleBoxEmpty_lmihv")
+
 [node name="RSide" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 
 [node name="SettingsButton" type="TextureButton" parent="MarginContainer/HBoxContainer/RSide"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(48, 48)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
@@ -121,8 +129,8 @@ text = "Game Version"
 label_settings = SubResource("LabelSettings_py80f")
 
 [node name="Logo" type="TextureRect" parent="MarginContainer/HBoxContainer/RSide"]
-visible = false
 layout_mode = 2
+texture = ExtResource("3_ckgf1")
 expand_mode = 4
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/LSide/GameOptions/NewGameButton" to="." method="_on_play_button_pressed"]
