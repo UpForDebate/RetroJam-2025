@@ -1,11 +1,45 @@
-[gd_scene load_steps=6 format=3 uid="uid://c4lccs8l5darl"]
+[gd_scene load_steps=14 format=3 uid="uid://c4lccs8l5darl"]
 
 [ext_resource type="Script" uid="uid://b7bvyri3qjtt1" path="res://addons/godot4.3_fps_character_controller/Player/PlayerLogic.gd" id="1_0ewp1"]
 [ext_resource type="Script" uid="uid://dqqhy04l5ya7v" path="res://addons/godot4.3_fps_character_controller/Player/player_inetractcast_logic.gd" id="2_dpr1a"]
 [ext_resource type="FontFile" uid="uid://6hflm8vkdjoo" path="res://addons/godot4.3_fps_character_controller/Player/Fonts/AmaticSC-Bold.ttf" id="3_8cn8c"]
 [ext_resource type="FontFile" uid="uid://h6o7nvdiwmhl" path="res://addons/godot4.3_fps_character_controller/Player/Fonts/AmaticSC-Regular.ttf" id="4_hqw2h"]
+[ext_resource type="AudioStream" uid="uid://bdpqt6w1bem7g" path="res://resources/audio/sfx/run steps-001.wav" id="5_uu6mv"]
+[ext_resource type="AudioStream" uid="uid://dpvr0wy6b3dkt" path="res://resources/audio/sfx/run steps-002.wav" id="6_7ry0f"]
+[ext_resource type="AudioStream" uid="uid://cdvt24htlpwrv" path="res://resources/audio/sfx/walk step.wav" id="7_1lyk5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g5alh"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o838k"]
+playback_mode = 1
+random_pitch = 1.1
+random_volume_offset_db = 1.0
+streams_count = 1
+stream_0/stream = ExtResource("5_uu6mv")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gpmol"]
+random_pitch = 1.1
+random_volume_offset_db = 1.48
+streams_count = 1
+stream_0/stream = ExtResource("6_7ry0f")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_72vo5"]
+shuffle = true
+fade_time = 0.0
+stream_count = 2
+stream_0 = SubResource("AudioStreamRandomizer_o838k")
+stream_1 = SubResource("AudioStreamRandomizer_gpmol")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_n2wo4"]
+random_pitch = 1.1
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("7_1lyk5")
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_x0yja"]
+fade_time = 0.0
+stream_count = 1
+stream_0 = SubResource("AudioStreamRandomizer_n2wo4")
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -71,3 +105,13 @@ autowrap_mode = 0
 shortcut_keys_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+
+[node name="RunAudio" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_72vo5")
+autoplay = true
+playback_type = 2
+
+[node name="WalkAudio" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamPlaylist_x0yja")
+autoplay = true
+playback_type = 2

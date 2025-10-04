@@ -38,7 +38,8 @@ class_name Player extends CharacterBody3D
 @onready var camera : Camera3D = $Head/Camera3D
 @onready var ltilt : Marker3D = $Tilt/LTilt
 @onready var rtilt : Marker3D = $Tilt/RTilt
-
+@onready var runaudioplayer : AudioStreamPlayer = $RunAudio
+@onready var walkaudioplayer : AudioStreamPlayer = $WalkAudio
 
 # Vectors
 var direction : Vector3 = Vector3.ZERO
@@ -82,14 +83,9 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Dialogic.current_timeline:
+		runaudioplayer.stop()
+		walkaudioplayer.stop()
 		return
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed(InputDictionary["Jump"]) and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 	#	Modified standard input for smooth movements.
 	var input_dir : Vector2 = Input.get_vector(InputDictionary["Left"], InputDictionary["Right"], InputDictionary["Forward"], InputDictionary["Backward"])
@@ -100,15 +96,35 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction.x * _speed
 		velocity.z = direction.z * _speed
 	else:
+		runaudioplayer.stop()
+		walkaudioplayer.stop()
 		velocity.x = move_toward(velocity.x,0,_speed)
 		velocity.z = move_toward(velocity.z,0,_speed)
 	
+	# Add the gravity.
+	if not is_on_floor():
+		runaudioplayer.stop()
+		walkaudioplayer.stop()
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(InputDictionary["Jump"]) and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
 	move_and_slide()
 
 func Sprint() -> void:
 	if Input.is_action_pressed(InputDictionary["Sprint"]):
+		if walkaudioplayer.playing:
+			walkaudioplayer.stop()
+		if not runaudioplayer.playing:
+			runaudioplayer.play()
 		_speed = lerp(_speed, Sprint_Speed, 0.1)
 	else:
+		if runaudioplayer.playing:
+			runaudioplayer.stop()
+		if not walkaudioplayer.playing:
+			walkaudioplayer.play()
 		_speed = lerp(_speed, Move_Speed, 0.1)
 
 func camera_tilt(delta: float) -> void:
