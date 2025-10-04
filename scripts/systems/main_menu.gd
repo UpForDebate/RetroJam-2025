@@ -11,7 +11,7 @@ func _ready():
 	
 	version_text.text = AppGlobal.game_version
 	
-	if OS.has_feature("android") or OS.has_feature("ios"):
+	if OS.has_feature("android") or OS.has_feature("ios") or OS.has_feature("web"):
 		$MarginContainer/HBoxContainer/LSide/GameOptions/QuitButton.visible = false
 
 

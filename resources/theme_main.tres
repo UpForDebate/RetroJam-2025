@@ -23,3 +23,5 @@ MarginContainer/constants/margin_bottom = 60
 MarginContainer/constants/margin_left = 40
 MarginContainer/constants/margin_right = 60
 MarginContainer/constants/margin_top = 40
+TabContainer/font_sizes/font_size = 32
+TabContainer/fonts/font = ExtResource("1_gxrpd")
