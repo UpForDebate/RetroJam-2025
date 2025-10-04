@@ -38,6 +38,10 @@ layout/style_directory={}
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/godot4.3_fps_character_controller/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 ui_accept={
