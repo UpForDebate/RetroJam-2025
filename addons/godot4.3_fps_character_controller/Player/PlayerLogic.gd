@@ -86,29 +86,31 @@ func _physics_process(delta: float) -> void:
 		runaudioplayer.stop()
 		walkaudioplayer.stop()
 		return
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed(InputDictionary["Jump"]) and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
 	#	Modified standard input for smooth movements.
 	var input_dir : Vector2 = Input.get_vector(InputDictionary["Left"], InputDictionary["Right"], InputDictionary["Forward"], InputDictionary["Backward"])
 	direction = lerp(direction,(transform.basis * Vector3(input_dir.x,0,input_dir.y)).normalized(), delta * 7.0)
 	_speed = lerp(_speed, Move_Speed, min(delta * 5.0, 1.0))
 	Sprint()
-	if input_dir.is_zero_approx():
-		runaudioplayer.stop()
-		walkaudioplayer.stop()
 	if direction:
 		velocity.x = direction.x * _speed
 		velocity.z = direction.z * _speed
 	else:
+		runaudioplayer.stop()
+		walkaudioplayer.stop()
 		velocity.x = move_toward(velocity.x,0,_speed)
 		velocity.z = move_toward(velocity.z,0,_speed)
 	
+	# Add the gravity.
+	if not is_on_floor():
+		runaudioplayer.stop()
+		walkaudioplayer.stop()
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(InputDictionary["Jump"]) and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
 	move_and_slide()
 
 func Sprint() -> void:
