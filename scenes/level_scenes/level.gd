@@ -1,6 +1,6 @@
 extends Node3D
 
-@export_file("*.dtl") var timeout_timeline : String
+@export var timeout_timeline : DialogicTimeline
 
 @onready var music_player : AudioStreamPlayer = $AudioStreamPlayer
 @onready var moises_timer : Timer = $MoisesTimer
@@ -13,6 +13,7 @@ func _ready() -> void:
 	Dialogic.start_timeline("res://resources/timeline/intro.dtl")
 	if timeout_timeline:
 		moises_timer.timeout.connect(Dialogic.start_timeline.bind(timeout_timeline))
+	Dialogic.signal_event.connect(get_tree().change_scene_to_packed.bind(preload("res://scenes/credits-scene/credits.tscn")), CONNECT_ONE_SHOT)
 
 func _process(_delta):
 	hud_timer.text = "0" + str(int(moises_timer.time_left/60)) + ":" + (("0" + str(int(moises_timer.time_left)%60)) if (int(moises_timer.time_left)%60<10) else str(int(moises_timer.time_left)%60))

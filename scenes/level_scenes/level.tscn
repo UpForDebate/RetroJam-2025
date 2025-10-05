@@ -1,11 +1,16 @@
-[gd_scene load_steps=13 format=3 uid="uid://cgk5w5go3ubna"]
+[gd_scene load_steps=20 format=3 uid="uid://cgk5w5go3ubna"]
 
 [ext_resource type="Texture2D" uid="uid://ct2jwtvifws2l" path="res://resources/804-hdri-skies-com.hdr" id="1_qlt1t"]
 [ext_resource type="Script" uid="uid://ch2j23vxgxteb" path="res://scenes/level_scenes/level.gd" id="1_umjk5"]
+[ext_resource type="Resource" uid="uid://dc3sxrtob84tf" path="res://resources/timeline/timeup.dtl" id="2_glvtk"]
 [ext_resource type="PackedScene" uid="uid://c4lccs8l5darl" path="res://addons/godot4.3_fps_character_controller/Player/player.tscn" id="2_jq388"]
 [ext_resource type="PackedScene" uid="uid://bcakep3kgxr4g" path="res://scenes/level_scenes/room.tscn" id="3_umjk5"]
 [ext_resource type="VoxelGIData" uid="uid://ccludboyhe0r7" path="res://scenes/level_scenes/level.VoxelGI_data.res" id="4_jq388"]
 [ext_resource type="FontFile" uid="uid://lpqbe8bly28y" path="res://resources/fonts/White On Black.ttf" id="7_e8740"]
+[ext_resource type="PackedScene" uid="uid://cgsiq5yvum6bb" path="res://scenes/level_scenes/interactable_table_1.tscn" id="9_fhhih"]
+[ext_resource type="PackedScene" uid="uid://dhjkgc2hj6qi" path="res://resources/models/Furniture/wardrobe_mp_1.glb" id="10_glvtk"]
+[ext_resource type="Script" uid="uid://c7pl70h71wfln" path="res://addons/godot4.3_fps_character_controller/Player/Interactable.gd" id="11_qbrts"]
+[ext_resource type="Resource" uid="uid://dx5x7n7vrimvs" path="res://resources/timeline/closet.dtl" id="12_fyp0a"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r3fl7"]
 panorama = ExtResource("1_qlt1t")
@@ -33,9 +38,12 @@ colors = PackedColorArray(1, 1, 1, 1)
 gradient = SubResource("Gradient_7ry0f")
 width = 1
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_glvtk"]
+size = Vector3(1.2409973, 2.0256348, 0.80615234)
+
 [node name="Level" type="Node3D"]
 script = ExtResource("1_umjk5")
-timeout_timeline = "uid://dc3sxrtob84tf"
+timeout_timeline = ExtResource("2_glvtk")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a0tk4")
@@ -95,3 +103,18 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_fhhih")
 expand_mode = 1
+
+[node name="Interactable Table 1" parent="." instance=ExtResource("9_fhhih")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -4.4555106, 0.0039812326, 7.1535525)
+
+[node name="wardrobe_mp_12" parent="." instance=ExtResource("10_glvtk")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.6470704, 0.003981471, -0.5994534)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wardrobe_mp_12"]
+script = ExtResource("11_qbrts")
+dialogue = ExtResource("12_fyp0a")
+prompt_message = "Check Closet"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wardrobe_mp_12/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003189087, 1.0047607, -0.09692383)
+shape = SubResource("BoxShape3D_glvtk")
