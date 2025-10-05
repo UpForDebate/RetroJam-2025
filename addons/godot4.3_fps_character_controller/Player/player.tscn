@@ -1,14 +1,28 @@
-[gd_scene load_steps=14 format=3 uid="uid://c4lccs8l5darl"]
+[gd_scene load_steps=18 format=3 uid="uid://c4lccs8l5darl"]
 
 [ext_resource type="Script" uid="uid://b7bvyri3qjtt1" path="res://addons/godot4.3_fps_character_controller/Player/PlayerLogic.gd" id="1_0ewp1"]
 [ext_resource type="Script" uid="uid://dqqhy04l5ya7v" path="res://addons/godot4.3_fps_character_controller/Player/player_inetractcast_logic.gd" id="2_dpr1a"]
 [ext_resource type="FontFile" uid="uid://6hflm8vkdjoo" path="res://addons/godot4.3_fps_character_controller/Player/Fonts/AmaticSC-Bold.ttf" id="3_8cn8c"]
 [ext_resource type="FontFile" uid="uid://h6o7nvdiwmhl" path="res://addons/godot4.3_fps_character_controller/Player/Fonts/AmaticSC-Regular.ttf" id="4_hqw2h"]
+[ext_resource type="FontFile" uid="uid://lpqbe8bly28y" path="res://resources/fonts/White On Black.ttf" id="5_7ry0f"]
 [ext_resource type="AudioStream" uid="uid://bdpqt6w1bem7g" path="res://resources/audio/sfx/run steps-001.wav" id="5_uu6mv"]
 [ext_resource type="AudioStream" uid="uid://dpvr0wy6b3dkt" path="res://resources/audio/sfx/run steps-002.wav" id="6_7ry0f"]
 [ext_resource type="AudioStream" uid="uid://cdvt24htlpwrv" path="res://resources/audio/sfx/walk step.wav" id="7_1lyk5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g5alh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1lyk5"]
+font = ExtResource("5_7ry0f")
+font_size = 69
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_7ry0f"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1lyk5"]
+gradient = SubResource("Gradient_7ry0f")
+width = 1
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_o838k"]
 playback_mode = 1
@@ -105,6 +119,33 @@ autowrap_mode = 0
 shortcut_keys_enabled = false
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+
+[node name="Label" type="Label" parent="UserInterface"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.0
+offset_top = 15.0
+offset_right = 14.0
+offset_bottom = 88.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "00:00"
+label_settings = SubResource("LabelSettings_1lyk5")
+
+[node name="TextureRect" type="TextureRect" parent="UserInterface/Label"]
+z_index = -3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_right = -2.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_1lyk5")
+expand_mode = 1
 
 [node name="RunAudio" type="AudioStreamPlayer" parent="."]
 stream = SubResource("AudioStreamPlaylist_72vo5")
