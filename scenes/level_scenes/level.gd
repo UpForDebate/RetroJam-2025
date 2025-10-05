@@ -23,5 +23,4 @@ func stop_music() -> void:
 	music_player.stop()
 
 func signal_handler(_signal : String):
-	return
-	#get_tree().change_scene_to_packed(preload("res://scenes/credits-scene/credits.tscn"))
+	get_tree().change_scene_to_packed(preload("res://scenes/credits-scene/credits.tscn"))
