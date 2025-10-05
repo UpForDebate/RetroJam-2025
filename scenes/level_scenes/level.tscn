@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cgk5w5go3ubna"]
+[gd_scene load_steps=21 format=3 uid="uid://cgk5w5go3ubna"]
 
 [ext_resource type="Texture2D" uid="uid://ct2jwtvifws2l" path="res://resources/804-hdri-skies-com.hdr" id="1_qlt1t"]
 [ext_resource type="Script" uid="uid://ch2j23vxgxteb" path="res://scenes/level_scenes/level.gd" id="1_umjk5"]
@@ -10,7 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://cgsiq5yvum6bb" path="res://scenes/level_scenes/interactable_table_1.tscn" id="9_fhhih"]
 [ext_resource type="PackedScene" uid="uid://dhjkgc2hj6qi" path="res://resources/models/Furniture/wardrobe_mp_1.glb" id="10_glvtk"]
 [ext_resource type="Script" uid="uid://c7pl70h71wfln" path="res://addons/godot4.3_fps_character_controller/Player/Interactable.gd" id="11_qbrts"]
+[ext_resource type="PackedScene" uid="uid://bv3txvyiuvkcp" path="res://resources/models/Items & Weapons/cell_phone_2.glb" id="12_7m58k"]
 [ext_resource type="Resource" uid="uid://dx5x7n7vrimvs" path="res://resources/timeline/closet.dtl" id="12_fyp0a"]
+[ext_resource type="Resource" uid="uid://ij0actb2x0es" path="res://resources/timeline/sscall.dtl" id="13_ftcxu"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r3fl7"]
 panorama = ExtResource("1_qlt1t")
@@ -39,7 +41,7 @@ gradient = SubResource("Gradient_7ry0f")
 width = 1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_glvtk"]
-size = Vector3(1.2409973, 2.0256348, 0.80615234)
+size = Vector3(0.14160156, 0.14428711, 0.20019531)
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_umjk5")
@@ -117,4 +119,15 @@ prompt_message = "Check Closet"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wardrobe_mp_12/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003189087, 1.0047607, -0.09692383)
+shape = SubResource("BoxShape3D_glvtk")
+
+[node name="cell_phone_22" parent="wardrobe_mp_12" instance=ExtResource("12_7m58k")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.0731063, 0.0016198829, 7.1589174)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="wardrobe_mp_12/cell_phone_22"]
+script = ExtResource("11_qbrts")
+dialogue = ExtResource("13_ftcxu")
+prompt_message = "Check Phone"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wardrobe_mp_12/cell_phone_22/StaticBody3D"]
 shape = SubResource("BoxShape3D_glvtk")

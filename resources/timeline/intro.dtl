@@ -1,3 +1,4 @@
+audio music "res://resources/audio/music/halloween waltz.wav"
 [style name="style"]
 [background arg="res://resources/sprites/backgrounds/black.png" fade="0.0"]
 In the grand theater of life, everyone eventually plays two roles\: the victim... and the idiot responsible.

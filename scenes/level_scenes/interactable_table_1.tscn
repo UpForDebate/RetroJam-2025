@@ -10,7 +10,7 @@
 [ext_resource type="Shader" uid="uid://bolkvji2rflxy" path="res://shaders/item_highlighter.gdshader" id="7_276pj"]
 [ext_resource type="Texture2D" uid="uid://byqm78g4earmq" path="res://resources/models/Items & Weapons/pistol_mp_1_pistols_mp_1.png" id="8_5y8af"]
 [ext_resource type="Texture2D" uid="uid://x2fnx3b6eki" path="res://resources/models/Items & Weapons/pistol_mp_1_mag_empty_pistols_mp_1.png" id="9_cyfkn"]
-[ext_resource type="Texture2D" uid="uid://u6oq01ec4m7b" path="res://resources/models/Items & Weapons/suppressor_mp_1_pistol_mp_1.png" id="10_t0fun"]
+[ext_resource type="Texture2D" uid="uid://b2cpkf4njgdor" path="res://resources/models/Items & Weapons/suppressor_mp_1_pistol_mp_1.png" id="10_t0fun"]
 [ext_resource type="Texture2D" uid="uid://chc21782qea5i" path="res://resources/models/Items & Weapons/pistol_mp_1_2_pistols_mp_1.png" id="11_jk8cr"]
 [ext_resource type="Texture2D" uid="uid://1rjvhjmaicb3" path="res://resources/models/Items & Weapons/pistol_mp_1_2_ammo_mp_1.png" id="12_5pa0v"]
 
