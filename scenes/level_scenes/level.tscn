@@ -1,11 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://cgk5w5go3ubna"]
+[gd_scene load_steps=13 format=3 uid="uid://cgk5w5go3ubna"]
 
 [ext_resource type="Texture2D" uid="uid://ct2jwtvifws2l" path="res://resources/804-hdri-skies-com.hdr" id="1_qlt1t"]
 [ext_resource type="Script" uid="uid://ch2j23vxgxteb" path="res://scenes/level_scenes/level.gd" id="1_umjk5"]
 [ext_resource type="PackedScene" uid="uid://c4lccs8l5darl" path="res://addons/godot4.3_fps_character_controller/Player/player.tscn" id="2_jq388"]
 [ext_resource type="PackedScene" uid="uid://bcakep3kgxr4g" path="res://scenes/level_scenes/room.tscn" id="3_umjk5"]
 [ext_resource type="VoxelGIData" uid="uid://ccludboyhe0r7" path="res://scenes/level_scenes/level.VoxelGI_data.res" id="4_jq388"]
-[ext_resource type="AudioStream" uid="uid://bvv4f8vlyjq63" path="res://resources/audio/music/iri.wav" id="6_o7bnr"]
 [ext_resource type="FontFile" uid="uid://lpqbe8bly28y" path="res://resources/fonts/White On Black.ttf" id="7_e8740"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r3fl7"]
@@ -36,6 +35,7 @@ width = 1
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_umjk5")
+timeout_timeline = "uid://dc3sxrtob84tf"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_a0tk4")
@@ -65,7 +65,6 @@ wait_time = 60.0
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_o7bnr")
 bus = &"Music"
 
 [node name="UserInterface" type="CanvasLayer" parent="."]

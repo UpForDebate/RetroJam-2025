@@ -10,5 +10,6 @@ Enter the closet?
 	On the bright side, the closet is now spotless.
 	Edgar dies. Horribly.
 	[BAD ENDING\: “Clean Exit”]
+	[signal]
 - No
 	You decide to come out of the closet some other time.

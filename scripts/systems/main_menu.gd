@@ -16,7 +16,7 @@ func _ready():
 
 
 func _on_play_button_pressed():
-	AppGlobal.game_controller.change_gui_scene("res://scenes/menu_scenes/level_select_menu.tscn", true)
+	get_tree().change_scene_to_file("res://scenes/level_scenes/level.tscn")
 
 func _on_load_game_button_play():
 	AppGlobal.game_controller.change_gui_scene("res://scenes/menu_scenes/save_manager_menu.tscn", false, false, false)

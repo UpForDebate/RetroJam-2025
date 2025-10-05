@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://c4lccs8l5darl"]
+[gd_scene load_steps=19 format=3 uid="uid://c4lccs8l5darl"]
 
 [ext_resource type="Script" uid="uid://b7bvyri3qjtt1" path="res://addons/godot4.3_fps_character_controller/Player/PlayerLogic.gd" id="1_0ewp1"]
 [ext_resource type="Script" uid="uid://dqqhy04l5ya7v" path="res://addons/godot4.3_fps_character_controller/Player/player_inetractcast_logic.gd" id="2_dpr1a"]
+[ext_resource type="Material" uid="uid://n7sx2e048aml" path="res://resources/materials/feartophathom.tres" id="3_1lyk5"]
 [ext_resource type="FontFile" uid="uid://6hflm8vkdjoo" path="res://addons/godot4.3_fps_character_controller/Player/Fonts/AmaticSC-Bold.ttf" id="3_8cn8c"]
 [ext_resource type="FontFile" uid="uid://h6o7nvdiwmhl" path="res://addons/godot4.3_fps_character_controller/Player/Fonts/AmaticSC-Regular.ttf" id="4_hqw2h"]
 [ext_resource type="FontFile" uid="uid://lpqbe8bly28y" path="res://resources/fonts/White On Black.ttf" id="5_7ry0f"]
@@ -91,6 +92,15 @@ Prompt = NodePath("../../UserInterface/InteracrLabelHolder/InteractLabel")
 [node name="RTilt" type="Marker3D" parent="Tilt"]
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="ColorRect" parent="UserInterface"]
+material = ExtResource("3_1lyk5")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="InteracrLabelHolder" type="Control" parent="UserInterface"]
 layout_mode = 3

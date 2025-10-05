@@ -12,12 +12,14 @@ Because apparently, the jam believed in strong conflict resolution.
 	HR would call it “termination with cause.”
 	Edgar survives. The building, less so.
 	[ENDING\: “Conflict Resolved”]
+	[signal]
 - Sawed-Off Shotgun
 	Edgar grabs the shotgun, trembling.
 	moises: You never could handle responsibility.
 	Edgar fires — the recoil launches him backwards into a PC setup
 	The gun worked perfectly. Edgar didn’t
 	[BAD ENDING\: “Occupational Hazard”]
+	[signal]
 - Assault Rifle
 	Two hundred hours of Counter-Strike can't have been for nothing.
 	Moisés slowly aproaches...
@@ -26,9 +28,13 @@ Because apparently, the jam believed in strong conflict resolution.
 	Edgar sprays the rifle, realising the trigger is heavier than the mouse click.
 	The wall is completly pierced. Moisés not so much...
 	[BAD ENDING\: “Back to Silver”]
+	[signal]
 - Grenade
 	Edgar grabs the grenade. Pulls the pin.
 	edgar: See you in hell, buddy.
 	Explosion.
 	In the end, Edgar found peace — and most of the fourth floor found new ventilation.
 	[ENDING\: “Collateral Redemption”]
+	[signal]
+- Comeback Later
+	A pacifist at heart...

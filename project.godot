@@ -32,8 +32,10 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "closet": "res://resources/timeline/closet.dtl",
+"coffee": "res://resources/timeline/coffee.dtl",
 "guns": "res://resources/timeline/guns.dtl",
 "intro": "res://resources/timeline/intro.dtl",
+"sscall": "res://resources/timeline/sscall.dtl",
 "timeup": "res://resources/timeline/timeup.dtl"
 }
 layout/style_directory={

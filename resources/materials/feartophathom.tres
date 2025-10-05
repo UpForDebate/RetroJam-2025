@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://n7sx2e048aml"]
+
+[ext_resource type="Shader" uid="uid://drqyhi3ty6831" path="res://shaders/post.gdshader" id="1_faysm"]
+
+[resource]
+shader = ExtResource("1_faysm")
+shader_parameter/aberration_strength = 3.0
+shader_parameter/blur_strength = 2.0
+shader_parameter/noise_strength = 0.048
+shader_parameter/vignette_strength = 0.78
+shader_parameter/scanline_strength = 0.016
+shader_parameter/distortion_strength = 0.1
+shader_parameter/ghost_strength = 0.12
+shader_parameter/flicker_strength = 0.005
