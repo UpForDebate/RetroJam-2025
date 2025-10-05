@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://cdvt24htlpwrv" path="res://resources/audio/sfx/walk step.wav" id="7_1lyk5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g5alh"]
+radius = 0.45
 
 [sub_resource type="LabelSettings" id="LabelSettings_1lyk5"]
 font = ExtResource("5_7ry0f")
