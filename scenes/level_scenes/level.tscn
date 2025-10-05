@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://cgk5w5go3ubna"]
+[gd_scene load_steps=25 format=4 uid="uid://cgk5w5go3ubna"]
 
 [ext_resource type="Texture2D" uid="uid://ct2jwtvifws2l" path="res://resources/804-hdri-skies-com.hdr" id="1_qlt1t"]
 [ext_resource type="Script" uid="uid://ch2j23vxgxteb" path="res://scenes/level_scenes/level.gd" id="1_umjk5"]
@@ -11,10 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dhjkgc2hj6qi" path="res://resources/models/Furniture/wardrobe_mp_1.glb" id="10_glvtk"]
 [ext_resource type="Script" uid="uid://c7pl70h71wfln" path="res://addons/godot4.3_fps_character_controller/Player/Interactable.gd" id="11_qbrts"]
 [ext_resource type="PackedScene" uid="uid://bv3txvyiuvkcp" path="res://resources/models/Items & Weapons/cell_phone_2.glb" id="12_7m58k"]
-[ext_resource type="Resource" uid="uid://dx5x7n7vrimvs" path="res://resources/timeline/closet.dtl" id="12_fyp0a"]
-[ext_resource type="Resource" uid="uid://ij0actb2x0es" path="res://resources/timeline/sscall.dtl" id="13_ftcxu"]
 [ext_resource type="Texture2D" uid="uid://cnblawu7v7iy2" path="res://resources/models/Small Props/coffee machine_BakeTXT.png" id="14_7m58k"]
-[ext_resource type="Resource" uid="uid://bnxq41rynbegr" path="res://resources/timeline/coffee.dtl" id="15_ftcxu"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r3fl7"]
 panorama = ExtResource("1_qlt1t")
@@ -163,8 +160,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.6
 
 [node name="StaticBody3D" type="StaticBody3D" parent="wardrobe_mp_12"]
 script = ExtResource("11_qbrts")
-dialogue = ExtResource("12_fyp0a")
+dialogue = "uid://dx5x7n7vrimvs"
 prompt_message = "Check Closet"
+_hasDialogue = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wardrobe_mp_12/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017597437, 1.0159607, 0.023095608)
@@ -175,8 +173,9 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.07
 
 [node name="StaticBody3D" type="StaticBody3D" parent="wardrobe_mp_12/cell_phone_22"]
 script = ExtResource("11_qbrts")
-dialogue = ExtResource("13_ftcxu")
+dialogue = "uid://ij0actb2x0es"
 prompt_message = "Check Phone"
+_hasDialogue = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wardrobe_mp_12/cell_phone_22/StaticBody3D"]
 shape = SubResource("BoxShape3D_fh7bx")
@@ -191,8 +190,9 @@ skeleton = NodePath("")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="coffee machine2"]
 script = ExtResource("11_qbrts")
-dialogue = ExtResource("15_ftcxu")
-prompt_message = "Check Closet"
+dialogue = "uid://bnxq41rynbegr"
+prompt_message = "Check Coffee Machine"
+_hasDialogue = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="coffee machine2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30724412, 0.028625488)
