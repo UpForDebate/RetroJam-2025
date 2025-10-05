@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgk5w5go3ubna"]
+[gd_scene load_steps=10 format=3 uid="uid://cgk5w5go3ubna"]
 
 [ext_resource type="Texture2D" uid="uid://ct2jwtvifws2l" path="res://resources/804-hdri-skies-com.hdr" id="1_qlt1t"]
 [ext_resource type="Script" uid="uid://ch2j23vxgxteb" path="res://scenes/level_scenes/level.gd" id="1_umjk5"]
 [ext_resource type="PackedScene" uid="uid://c4lccs8l5darl" path="res://addons/godot4.3_fps_character_controller/Player/player.tscn" id="2_jq388"]
 [ext_resource type="PackedScene" uid="uid://bcakep3kgxr4g" path="res://scenes/level_scenes/room.tscn" id="3_umjk5"]
 [ext_resource type="VoxelGIData" uid="uid://ccludboyhe0r7" path="res://scenes/level_scenes/level.VoxelGI_data.res" id="4_jq388"]
+[ext_resource type="AudioStream" uid="uid://bvv4f8vlyjq63" path="res://resources/audio/music/iri.wav" id="6_o7bnr"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r3fl7"]
 panorama = ExtResource("1_qlt1t")
@@ -46,3 +47,7 @@ size = Vector3(16.84961, 20, 19.332886)
 data = ExtResource("4_jq388")
 
 [node name="MoisesTimer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_o7bnr")
+bus = &"Music"
