@@ -5,15 +5,19 @@ Our story begins with Edgar — sound engineer by day, accidental murderer by...
 It all started last year. Edgar and his coworker Moisés had a simple disagreement. Something small. Petty.
 Like who should occupy a small space\: Moisés or a door?
 A shove. A slip. The wrong place at the wrong time.
+[background arg="res://resources/sprites/backgrounds/lapide.png" fade="0.0"]
 And just like that — Moisés was gone.
 Edgar swore it was an accident. And for a while, he believed that.
-Until tonight.
+Until today.
+[background arg="res://resources/sprites/backgrounds/lapide2.png" fade="0.0"]
 You see… Moisés is back. Not as a man…
 But as something far worse.
 [background arg="res://resources/sprites/backgrounds/moisesback.png" fade="0.0"]
 A game developer with unfinished projects.
 And Edgar?
+[background arg="res://resources/sprites/backgrounds/edgarrun.png" fade="0.0"]
 He ran. And he’s trapped in the game jam building, armed only with his wits — and whatever questionable objects he can find in the break room.
 Can he survive the night?
 Or will justice… crunch to get the job done?
+[background fade="0.0"]
 edgar: Foda-se. I have to kill Moisés again.

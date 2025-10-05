@@ -1,6 +1,7 @@
 Desperate times call for bureaucratic measures.
 Call the academic services?
 - Yes
+	[background arg="res://resources/sprites/backgrounds/black.png" fade="0.0"]
 	Edgar dials the Academic Services. Miraculously, someone answers.
 	Please hold. Your workplace incident is very important to us.
 	(elevator music)

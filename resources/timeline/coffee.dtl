@@ -1,6 +1,7 @@
 A brave man chooses caffeine over fear.
 Take the coffee machine?
 - Yes
+	[background arg="res://resources/sprites/backgrounds/black.png" fade="0.0"]
 	Edgar hoists the office coffee machine — a heavy, sputtering relic of the 90s. He hurls steaming espresso at the undead menace!
 	moises: You burned me once already, Edgar…
 	Moisés screams, blinded by boiling coffee — but the caffeine seems to energize him instead.\

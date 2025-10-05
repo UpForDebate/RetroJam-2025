@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqsogq5t51yh2"
-path="res://.godot/imported/lapide.png-c0530c0ff5286bbc968eda0aa1372cae.ctex"
+uid="uid://w744ua11a12g"
+path="res://.godot/imported/closet.png-3cf0ac126b07a5729cd0e7177160f49e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/backgrounds/lapide.png"
-dest_files=["res://.godot/imported/lapide.png-c0530c0ff5286bbc968eda0aa1372cae.ctex"]
+source_file="res://resources/sprites/backgrounds/closet.png"
+dest_files=["res://.godot/imported/closet.png-3cf0ac126b07a5729cd0e7177160f49e.ctex"]
 
 [params]
 

@@ -1,10 +1,12 @@
 Brilliant. The predator can’t find what doesn’t exist.
 Enter the closet?
 - Yes
-	[background arg="res://resources/sprites/backgrounds/black.png" fade="0.0"]
+	[background arg="res://resources/sprites/backgrounds/closet.png" fade="0.0"]
 	Edgar slips into the closet, surrounded by the comforting scent of cleaning supplies and despair.
 	Footsteps pass by... then stop.
-	moises: You always hid behind office policy, Edgar…
+	[background arg="res://resources/sprites/backgrounds/closet2.png" fade="0.0"]
+	moises: You always hid behind the screen, Edgar…
+	[background arg="res://resources/sprites/backgrounds/black.png" fade="0.0"]
 	Moisés opens the door slowly.
 	Edgar’s last sight is a label reading ‘Industrial Strength Bleach.’
 	On the bright side, the closet is now spotless.
