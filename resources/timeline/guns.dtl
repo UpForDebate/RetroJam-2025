@@ -1,3 +1,4 @@
+[style name="style"]
 [background arg="res://resources/sprites/backgrounds/black.png" fade="0.0"]
 Every building hides a secret. Some hide mold. Some hide debt.\
 This one hides… an illegal armory.
