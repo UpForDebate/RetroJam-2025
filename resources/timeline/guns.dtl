@@ -1,0 +1,34 @@
+[background arg="res://resources/sprites/backgrounds/black.png" fade="0.0"]
+Every building hides a secret. Some hide mold. Some hide debt.\
+This one hides… an illegal armory.
+Because apparently, the jam believed in strong conflict resolution.
+- 9mm Handgun
+	Classic, reliable, morally ambiguous.
+	Edgar loads the handgun.
+	edgar: You wanted closure, Moisés? Let’s close this.
+	Gunfire echoes through the halls.
+	Moisés staggers, falls.
+	And just like that, the circle of violence was complete.\
+	HR would call it “termination with cause.”
+	Edgar survives. The building, less so.
+	[ENDING\: “Conflict Resolved”]
+- Sawed-Off Shotgun
+	Edgar grabs the shotgun, trembling.
+	moises: You never could handle responsibility.
+	Edgar fires — the recoil launches him backwards into a PC setup
+	The gun worked perfectly. Edgar didn’t
+	[BAD ENDING\: “Occupational Hazard”]
+- Assault Rifle
+	Two hundred hours of Counter-Strike can't have been for nothing.
+	Moisés slowly aproaches...
+	moises: Already an AK on the second round? That's poor money management.
+	edgar: Eat lead Moisés!
+	Edgar sprays the rifle, realising the trigger is heavier than the mouse click.
+	The wall is completly pierced. Moisés not so much...
+	[BAD ENDING\: “Back to Silver”]
+- Grenade
+	Edgar grabs the grenade. Pulls the pin.
+	edgar: See you in hell, buddy.
+	Explosion.
+	In the end, Edgar found peace — and most of the fourth floor found new ventilation.
+	[ENDING\: “Collateral Redemption”]

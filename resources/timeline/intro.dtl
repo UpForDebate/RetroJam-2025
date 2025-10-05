@@ -1,5 +1,5 @@
 [style name="style"]
-[background fade="0.0"]
+[background arg="res://resources/sprites/backgrounds/black.png" fade="0.0"]
 In the grand theater of life, everyone eventually plays two roles\: the victim... and the idiot responsible.
 Our story begins with Edgar — sound engineer by day, accidental murderer by... poor impulse control.
 It all started last year. Edgar and his coworker Moisés had a simple disagreement. Something small. Petty.
@@ -10,6 +10,7 @@ Edgar swore it was an accident. And for a while, he believed that.
 Until tonight.
 You see… Moisés is back. Not as a man…
 But as something far worse.
+[background arg="res://resources/sprites/backgrounds/moisesback.png" fade="0.0"]
 A game developer with unfinished projects.
 And Edgar?
 He ran. And he’s trapped in the game jam building, armed only with his wits — and whatever questionable objects he can find in the break room.
