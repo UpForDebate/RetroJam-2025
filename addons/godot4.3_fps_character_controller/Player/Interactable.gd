@@ -1,6 +1,6 @@
 class_name Interactable extends Node
 
-signal interacted(body)
+signal interacted()
 signal finish_interaction()
 
 @export_subgroup("Dialogue")
@@ -37,7 +37,7 @@ func get_prompt() -> String:
 	return prompt_message
 
 func interact(body) -> void:
-	interacted.emit(body)
+	interacted.emit()
 	finish_interaction.emit()
 
 func run_dialogue() -> void:
