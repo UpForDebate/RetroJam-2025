@@ -30,7 +30,10 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
-directories/dch_directory={}
+directories/dch_directory={
+"edgar": "res://resources/timeline/edgar.dch",
+"moises": "res://resources/timeline/moises.dch"
+}
 directories/dtl_directory={
 "intro": "res://resources/timeline/intro.dtl"
 }
@@ -40,6 +43,10 @@ layout/style_directory={
 }
 layout/style_list=["res://style.tres"]
 layout/default_style="res://style.tres"
+
+[display]
+
+window/size/resizable=false
 
 [editor_plugins]
 
