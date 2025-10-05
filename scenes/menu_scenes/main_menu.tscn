@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://cedf8dexfe75p"]
+[gd_scene load_steps=14 format=3 uid="uid://cedf8dexfe75p"]
 
 [ext_resource type="Theme" uid="uid://12luaxvvh3tt" path="res://resources/theme_main.tres" id="1_7i2ea"]
 [ext_resource type="Script" uid="uid://n3rmwtdtremj" path="res://scripts/systems/main_menu.gd" id="1_kov03"]
 [ext_resource type="Texture2D" uid="uid://c61f01bmjdsu1" path="res://resources/sprites/UpForDebateLogo.png" id="3_ckgf1"]
 [ext_resource type="Texture2D" uid="uid://bn28xhlgupmdj" path="res://resources/game_logo.png" id="3_lmihv"]
 [ext_resource type="Texture2D" uid="uid://c82o11qs8rlsi" path="res://resources/sprites/backgrounds/moisesback.png" id="5_y27fs"]
+[ext_resource type="AudioStream" uid="uid://bvv4f8vlyjq63" path="res://resources/audio/music/iri.wav" id="6_r76a3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lmihv"]
 
@@ -21,6 +22,9 @@ region = Rect2(128, 128, 128, 128)
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="FontFile" id="FontFile_jelxa"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -149,6 +153,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("5_y27fs")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_r76a3")
+autoplay = true
+bus = &"Music"
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/LSide/GameOptions/NewGameButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/LSide/GameOptions/SettingsButtons" to="." method="_on_settings_pressed"]

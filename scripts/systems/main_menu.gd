@@ -2,6 +2,7 @@ extends Control
 
 @export var version_text : Label
 @export var continue_button : Button
+var exited : bool = false
 
 func _ready():
 	if AppGlobal.saves.is_empty():
@@ -16,7 +17,10 @@ func _ready():
 
 
 func _on_play_button_pressed():
-	get_tree().change_scene_to_file("res://scenes/level_scenes/level.tscn")
+	if !exited:
+		get_tree().change_scene_to_file("res://scenes/level_scenes/level.tscn")
+	exited = true
+
 
 func _on_load_game_button_play():
 	AppGlobal.game_controller.change_gui_scene("res://scenes/menu_scenes/save_manager_menu.tscn", false, false, false)
