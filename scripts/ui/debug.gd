@@ -19,7 +19,7 @@ func _physics_process(_delta: float) -> void:
 	add_debug_property("FPS", Engine.get_frames_per_second(), 1)
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("game_debug"):
+	if event.is_action_pressed("debug"):
 		if not AppGlobal.game_controller.gui.visible:
 			AppGlobal.game_controller.gui.visible = true
 		else:
