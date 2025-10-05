@@ -237,8 +237,7 @@ func end():
 	# otherwise if quitOnEnd is enabled, just quit
 	if nextScene != null:
 		# warning-ignore:return_value_discarded
-		get_parent().add_child(nextScene.instantiate())
-		self.queue_free()
+		get_tree().change_scene_to_packed(nextScene)
 	elif quitOnEnd:
 		get_tree().quit()
 	elif destroyOnEnd:
