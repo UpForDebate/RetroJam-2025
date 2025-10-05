@@ -13,10 +13,13 @@ func _ready() -> void:
 	Dialogic.start_timeline("res://resources/timeline/intro.dtl")
 	if timeout_timeline:
 		moises_timer.timeout.connect(Dialogic.start_timeline.bind(timeout_timeline))
-	Dialogic.signal_event.connect(get_tree().change_scene_to_packed.bind(preload("res://scenes/credits-scene/credits.tscn")), CONNECT_ONE_SHOT)
+	Dialogic.signal_event.connect(signal_handler, CONNECT_ONE_SHOT)
 
 func _process(_delta):
 	hud_timer.text = "0" + str(int(moises_timer.time_left/60)) + ":" + (("0" + str(int(moises_timer.time_left)%60)) if (int(moises_timer.time_left)%60<10) else str(int(moises_timer.time_left)%60))
 
 func stop_music() -> void:
 	music_player.stop()
+
+func signal_handler(_signal : String):
+	get_tree().change_scene_to_packed.bind(preload("res://scenes/credits-scene/credits.tscn"))
