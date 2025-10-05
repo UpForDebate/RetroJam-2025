@@ -4,7 +4,7 @@ signal interacted()
 signal finish_interaction()
 
 @export_subgroup("Dialogue")
-@export var dialogue : DialogicTimeline
+@export_file("*.dtl") var dialogue : String
 
 @export_category("Prompt Settings")
 @export_enum(
@@ -42,5 +42,4 @@ func interact(body) -> void:
 
 func run_dialogue() -> void:
 	Dialogic.start_timeline(dialogue)
-	await Dialogic.timeline_ended
-	finish_interaction.emit()
+	Dialogic.timeline_ended.connect(finish_interaction.emit)

@@ -165,6 +165,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.6
 script = ExtResource("11_qbrts")
 dialogue = ExtResource("12_fyp0a")
 prompt_message = "Check Closet"
+_hasDialogue = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wardrobe_mp_12/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017597437, 1.0159607, 0.023095608)
@@ -177,6 +178,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5.07
 script = ExtResource("11_qbrts")
 dialogue = ExtResource("13_ftcxu")
 prompt_message = "Check Phone"
+_hasDialogue = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="wardrobe_mp_12/cell_phone_22/StaticBody3D"]
 shape = SubResource("BoxShape3D_fh7bx")
@@ -192,7 +194,8 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="coffee machine2"]
 script = ExtResource("11_qbrts")
 dialogue = ExtResource("15_ftcxu")
-prompt_message = "Check Closet"
+prompt_message = "Check Coffee Machine"
+_hasDialogue = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="coffee machine2/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30724412, 0.028625488)

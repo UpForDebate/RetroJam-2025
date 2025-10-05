@@ -1,9 +1,8 @@
-[gd_scene load_steps=47 format=4 uid="uid://cgsiq5yvum6bb"]
+[gd_scene load_steps=46 format=4 uid="uid://cgsiq5yvum6bb"]
 
 [ext_resource type="PackedScene" uid="uid://dn2n2uk6f5xqy" path="res://resources/models/Furniture/coffee_table_1_4.glb" id="1_wawyv"]
 [ext_resource type="PackedScene" uid="uid://bfbvax7k6lpac" path="res://resources/models/Items & Weapons/ammo_box_1.glb" id="2_jqrf5"]
 [ext_resource type="PackedScene" uid="uid://ceoscp7mn1nx2" path="res://resources/models/Items & Weapons/ammo_pistol_loose_1pc_mp_3.glb" id="3_1sbgg"]
-[ext_resource type="Resource" uid="uid://bwb4jweyj8pxm" path="res://resources/timeline/guns.dtl" id="3_5y8af"]
 [ext_resource type="Texture2D" uid="uid://dux0ur6il5vu1" path="res://resources/models/Items & Weapons/shotgun_1_shotgun_1.png" id="4_u3267"]
 [ext_resource type="Material" uid="uid://kg3a34bj18bv" path="res://resources/materials/highlighter.tres" id="5_b4w8c"]
 [ext_resource type="Script" uid="uid://c7pl70h71wfln" path="res://addons/godot4.3_fps_character_controller/Player/Interactable.gd" id="6_jqrf5"]
@@ -461,7 +460,7 @@ shadow_mesh = SubResource("ArrayMesh_5csmn")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="coffee_table_1_42"]
 script = ExtResource("6_jqrf5")
-dialogue = ExtResource("3_5y8af")
+dialogue = "uid://bwb4jweyj8pxm"
 prompt_message = "Check Guns"
 _hasDialogue = true
 
