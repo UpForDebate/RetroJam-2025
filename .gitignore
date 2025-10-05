@@ -2,6 +2,7 @@
 .godot/
 .nomedia
 build/
+resources/models/
 
 # Godot-specific ignores
 .import/
