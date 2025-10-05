@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgk5w5go3ubna"]
+[gd_scene load_steps=14 format=3 uid="uid://cgk5w5go3ubna"]
 
 [ext_resource type="Texture2D" uid="uid://ct2jwtvifws2l" path="res://resources/804-hdri-skies-com.hdr" id="1_qlt1t"]
 [ext_resource type="Script" uid="uid://ch2j23vxgxteb" path="res://scenes/level_scenes/level.gd" id="1_umjk5"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bcakep3kgxr4g" path="res://scenes/level_scenes/room.tscn" id="3_umjk5"]
 [ext_resource type="VoxelGIData" uid="uid://ccludboyhe0r7" path="res://scenes/level_scenes/level.VoxelGI_data.res" id="4_jq388"]
 [ext_resource type="AudioStream" uid="uid://bvv4f8vlyjq63" path="res://resources/audio/music/iri.wav" id="6_o7bnr"]
+[ext_resource type="FontFile" uid="uid://lpqbe8bly28y" path="res://resources/fonts/White On Black.ttf" id="7_e8740"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_r3fl7"]
 panorama = ExtResource("1_qlt1t")
@@ -19,6 +20,19 @@ sky = SubResource("Sky_noarx")
 tonemap_mode = 2
 sdfgi_enabled = true
 glow_enabled = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_uyah4"]
+font = ExtResource("7_e8740")
+font_size = 69
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_7ry0f"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fhhih"]
+gradient = SubResource("Gradient_7ry0f")
+width = 1
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_umjk5")
@@ -47,7 +61,38 @@ size = Vector3(16.84961, 20, 19.332886)
 data = ExtResource("4_jq388")
 
 [node name="MoisesTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_o7bnr")
 bus = &"Music"
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="UserInterface"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.0
+offset_top = 15.0
+offset_right = 14.0
+offset_bottom = 88.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+text = "00:00"
+label_settings = SubResource("LabelSettings_uyah4")
+
+[node name="TextureRect" type="TextureRect" parent="UserInterface/Label"]
+z_index = -3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 3.0
+offset_right = -2.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_fhhih")
+expand_mode = 1
